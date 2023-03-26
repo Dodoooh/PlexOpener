@@ -20,7 +20,7 @@ services:
       FORWARD_URL: <forward_url>
       WEBHOOK_URL: <webhook_url>
     ports:
-      - "8080:8080"
+      - "3000:3000"
 ```
 
 
