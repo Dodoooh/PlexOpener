@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logged In</title>
+    <style>
+        @keyframes moveShip {
+            0% {
+                transform: translate(-100%, 50%);
+            }
+            100% {
+                transform: translate(100%, 50%);
+            }
+        }
+
+        body {
+            background-color: black;
+            color: lime;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-top: 2em;
+        }
+
+        img.avatar {
+            display: block;
+            margin: 2em auto;
+            width: 150px;
+            height: 150px;
+            border: 3px solid lime;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        p {
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        div.star {
+            position: absolute;
+            background-color: white;
+            width: 2px;
+            height: 2px;
+        }
+
+        span.ship {
+            position: absolute;
+            font-size: 2em;
+            animation: moveShip 5s linear infinite;
+        }
+    </style>
+    <script>
+        function generateStarsAndShips() {
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement("div");
+                star.classList.add("star");
+                star.style.left = Math.random() * 100 + "vw";
+                star.style.top = Math.random() * 100 + "vh";
+                star.style.animationDuration = Math.random() * 1.5 + 0.5 + "s";
+                document.body.appendChild(star);
+            }
+
+            for (let i = 0; i < 10; i++) {
+                const ship = document.createElement("span");
+                ship.classList.add("ship");
+                ship.innerHTML = "🚀";
+                ship.style.left = Math.random() * 100 + "vw";
+                ship.style.top = Math.random() * 100 + "vh";
+                ship.style.animationDuration = Math.random() * 5 + 5 + "s";
+                document.body.appendChild(ship);
+            }
+        }
+    </script>
+</head>
+<body onload="generateStarsAndShips()">
+    <h1>Willkommen <%= username %></h1>
+    <img class="avatar" src="<%= avatarUrl %>" alt="Avatar">
+    <p>Deine Daten wurden gespeichert.</p>
+</body>
+</html>

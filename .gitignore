@@ -1,0 +1,28 @@
+# .gitignore
+
+# Ignoriere den node_modules-Ordner
+node_modules/
+
+# Ignoriere Betriebssystem- und Editor-spezifische Dateien und Ordner
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+
+# Ignoriere Dateien, die von Build- und Testprozessen generiert werden
+dist/
+build/
+coverage/
+*.tmp
+
+# Ignoriere Umgebungsvariablen-Dateien, die vertrauliche Informationen enthalten könnten
+.env
+.env.local
+.env.development
+.env.production
+
+# Ignoriere Dateien, die von Paketmanagern generiert werden
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
